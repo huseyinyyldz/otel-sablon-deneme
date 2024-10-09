@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Events and Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Site İsmi</h1>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <div class="logo"><i class="fas fa-bars"></i></div>
+        <nav class="menu">
+            <a href="#"><i class="fas fa-home"></i><span>Ana Sayfa</span></a>
+            <a href="#"><i class="fas fa-calendar-day"></i><span>Günün Etkinlikleri</span></a>
+            <a href="#"><i class="fas fa-calendar-check"></i><span>Rezervasyon</span></a>
+            <a href="#"><i class="fas fa-bell"></i><span>Odaya Çağır</span></a>
+            <a href="#"><i class="fas fa-utensils"></i><span>Menü</span></a>
+            <a href="#"><i class="fas fa-info-circle"></i><span>Hakkımızda</span></a>
+            <a href="#"><i class="fas fa-envelope"></i><span>İletişim</span></a>
+        </nav>
+    </div>
+    <div class="banner">
+        <div class="slider" id="slider"></div>
+        <div class="site-name">Site İsmi</div>
+    </div>
+    <div class="content">
+        <section class="events">
+            <h2>Günün Etkinlikleri</h2>
+            <div class="event-card" onclick="toggleEventDetails(this)">
+                <img src="/panel-foto/1.jpg" alt="Etkinlik Fotoğrafı" class="event-photo">
+                <div class="event-info">
+                    <h3>Konser Gecesi</h3>
+                    <p>Etkinlik Yeri: Sahil Meydanı</p>
+                    <p>Etkinlik Saati: 19:00 - 22:00</p>
+                </div>
+                <div class="event-details">
+                    <p>Sahil Meydanı'nda canlı müzik performansları ve DJ etkinlikleri. Katılım ücretsiz!</p>
+                </div>
+            </div>
+            <div class="event-card" onclick="toggleEventDetails(this)">
+                <img src="/panel-foto/2.jpg" alt="Etkinlik Fotoğrafı" class="event-photo">
+                <div class="event-info">
+                    <h3>Yoga Seansı</h3>
+                    <p>Etkinlik Yeri: Park Alanı</p>
+                    <p>Etkinlik Saati: 08:00 - 09:00</p>
+                </div>
+                <div class="event-details">
+                    <p>Güne sağlıklı bir başlangıç için yoga seansına katılın. Tüm seviyelere uygun.</p>
+                </div>
+            </div>
+            <div class="event-card" onclick="toggleEventDetails(this)">
+                <img src="/panel-foto/3.jpg" alt="Etkinlik Fotoğrafı" class="event-photo">
+                <div class="event-info">
+                    <h3>Çocuk Şenliği</h3>
+                    <p>Etkinlik Yeri: Oyun Parkı</p>
+                    <p>Etkinlik Saati: 12:00 - 15:00</p>
+                </div>
+                <div class="event-details">
+                    <p>Çocuklar için oyunlar, yarışmalar ve eğlenceli aktiviteler düzenleniyor. Herkesi bekliyoruz!</p>
+                </div>
+            </div>
+        </section>
+        <section class="reservation">
+            <h2>Rezervasyon</h2>
+            <div class="reservation-option" onclick="toggleReservationDetails(this)">
+                <h3>Oda Rezervasyonu</h3>
+                <div class="calendar">
+                    <!-- Takvim ve saat seçim yapısı burada -->
+                    <input type="date">
+                    <input type="time">
+                </div>
+            </div>
+            <div class="reservation-option" onclick="toggleReservationDetails(this)">
+                <h3>Restoran Rezervasyonu</h3>
+                <div class="calendar">
+                    <input type="date">
+                    <input type="time">
+                </div>
+            </div>
+            <div class="reservation-option" onclick="toggleReservationDetails(this)">
+                <h3>Etkinlik Rezervasyonu</h3>
+                <div class="calendar">
+                    <input type="date">
+                    <input type="time">
+                </div>
+            </div>
+            <div class="reservation-option" onclick="toggleReservationDetails(this)">
+                <h3>Alakart Rezervasyonu</h3>
+                <div class="calendar">
+                    <input type="date">
+                    <input type="time">
+                </div>
+            </div>
+            <div class="reservation-option" onclick="toggleReservationDetails(this)">
+                <h3>Beach Rezervasyonu</h3>
+                <div class="calendar">
+                    <input type="date">
+                    <input type="time">
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="content">
+        <section class="room-service">
+            <h2>Odaya Çağır</h2>
+            <div class="service-option" onclick="toggleServiceDetails(this)">
+                <img src="/panel-foto/1.jpg" alt="İçecek Fotoğrafı">
+                <h3>İçecek</h3>
+                <div class="service-details">
+                    <div class="sub-option" onclick="toggleSubOption(event, this)">
+                        <h4>Sıcak</h4>
+                        <div class="items">
+                            <label><input type="checkbox"> Çay</label>
+                            <label><input type="checkbox"> Kahve</label>
+                            <label><input type="checkbox"> Sıcak Çikolata</label>
+                            <label><input type="checkbox"> Latte</label>
+                            <label><input type="checkbox"> Espresso</label>
+                        </div>
+                    </div>
+                    <div class="sub-option" onclick="toggleSubOption(event, this)">
+                        <h4>Soğuk</h4>
+                        <div class="items">
+                            <label><input type="checkbox"> Buzlu Çay</label>
+                            <label><input type="checkbox"> Limonata</label>
+                            <label><input type="checkbox"> Meyve Suyu</label>
+                            <label><input type="checkbox"> Soda</label>
+                            <label><input type="checkbox"> Smoothie</label>
+                        </div>
+                    </div>
+                    <div class="sub-option" onclick="toggleSubOption(event, this)">
+                        <h4>Alkollü</h4>
+                        <div class="items">
+                            <label><input type="checkbox"> Bira</label>
+                            <label><input type="checkbox"> Şarap</label>
+                            <label><input type="checkbox"> Viski</label>
+                            <label><input type="checkbox"> Tekila</label>
+                            <label><input type="checkbox"> Kokteyl</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-option" onclick="toggleServiceDetails(this)">
+                <img src="/panel-foto/2.jpg" alt="Kahvaltı Fotoğrafı">
+                <h3>Kahvaltı Ürünleri</h3>
+                <div class="service-details">
+                    <div class="sub-option" onclick="toggleSubOption(event, this)">
+                        <h4>Standart Kahvaltı</h4>
+                        <div class="items">
+                            <label><input type="checkbox"> Omlet</label>
+                            <label><input type="checkbox"> Menemen</label>
+                            <label><input type="checkbox"> Peynir Tabağı</label>
+                            <label><input type="checkbox"> Zeytin</label>
+                            <label><input type="checkbox"> Reçel</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-option" onclick="toggleServiceDetails(this)">
+                <img src="/panel-foto/3.jpg" alt="Yemek Fotoğrafı">
+                <h3>Yemek</h3>
+                <div class="service-details">
+                    <div class="sub-option" onclick="toggleSubOption(event, this)">
+                        <h4>Başlangıçlar</h4>
+                        <div class="items">
+                            <label><input type="checkbox"> Çorba</label>
+                            <label><input type="checkbox"> Salata</label>
+                            <label><input type="checkbox"> Meze</label>
+                            <label><input type="checkbox"> Patates Kızartması</label>
+                            <label><input type="checkbox"> Peynirli Ekmek</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <button class="scroll-to-top" id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
